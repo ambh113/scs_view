@@ -59,6 +59,11 @@ export default {
       //   signIn: true,
     };
   },
+  methods: {
+    calling() {
+      
+    }
+  }
 };
 </script>
 
