@@ -36,7 +36,7 @@
       </div>
     </q-card-section>
     <q-card-section class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6">
         <q-select
           v-model="courseName"
           :options="courseList"
@@ -44,7 +44,7 @@
           class="q-ma-sm"
         />
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6">
         <q-select
           v-model="session"
           :options="sessionList"
@@ -114,14 +114,23 @@ export default {
       password: null,
       confirmPassword: null,
       courseName: null,
-      courseList: ["MCA", "Phd. "],
+      courseList: [],
       session: null,
       sessionList: ["2018-21", "2019-22", "2020-2022"],
       isPwd: true,
       res: '',
     };
   },
+  async created() {
+    await this.getCourses();
+  },
   methods: {
+    async getCourses() {
+      const resp = await this.$axios.get("/courses");
+      var courses = resp.data;
+      console.log('resp', courses);
+      this.courseList = courses.map(c => c.course_name);
+    },
     async register() {
       // console.log("register", this.$axios);
       const resp = await this.$axios.get("/aluminis");
