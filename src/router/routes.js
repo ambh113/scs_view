@@ -3,21 +3,39 @@ const routes = [{
         component: () =>
             import ('layouts/MainLayout.vue'),
         children: [{
-            path: '',
-            component: () =>
-                import ('pages/Index.vue')
-        }]
+                path: '',
+                component: () =>
+                    import ('pages/Index.vue')
+            },
+            {
+                path: '/profile',
+                component: () =>
+                    import ('pages/Alumini_dashboard'),
+                children: [{
+                        path: '/personalDetails',
+                        component: () =>
+                            import ('pages/PersonalDetails')
+                    },
+                    {
+                        path: '/about',
+                        component: () =>
+                            import ('pages/About')
+                    }
+                ]
+            }
+        ]
     },
-    {
-        path: '/login',
-        component: () =>
-            import ('pages/auth/Login.vue')
-    },
-    {
-        path: '/candidate',
-        component: () =>
-            import ('pages/Candidate.vue'),
-    },
+    // {
+    //     path: '/login',
+    //     component: () =>
+    //         import ('pages/auth/Login.vue')
+    // },
+    // {
+    //     path: '/candidate',
+    //     component: () =>
+    //         import ('pages/Candidate.vue'),
+    // },
+
 
     // Always leave this as last one,
     // but you can also remove it

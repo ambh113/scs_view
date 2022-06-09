@@ -21,8 +21,8 @@
 
     <q-header reveal class="bg-primary">
       <q-toolbar>
-        <q-btn label="Sign in" color="primary" @click="signIn = true" />
-        <q-btn label="Register" color="primary" @click="register = true" />
+        <q-btn  v-if="!isLoggedIn" label="Sign in" color="primary" @click="signIn = true" />
+        <q-btn  v-if="!isLoggedIn" label="Register" color="primary" @click="register = true" />
       </q-toolbar>
     </q-header>
     <!-- <q-drawer
@@ -115,6 +115,7 @@ export default {
   },
   data() {
     return {
+      isLoggedIn: false,
       register: false,
       signIn: false,
       leftDrawerOpen: false,
