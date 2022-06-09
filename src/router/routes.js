@@ -12,12 +12,13 @@ const routes = [{
                 component: () =>
                     import ('pages/Alumini_dashboard'),
                 children: [{
-                        path: '/personalDetails',
+                        path: 'personalDetails',
+                        name: 'personal-details',
                         component: () =>
                             import ('pages/PersonalDetails')
                     },
                     {
-                        path: '/about',
+                        path: 'about',
                         component: () =>
                             import ('pages/About')
                     }

@@ -19,7 +19,7 @@
       </q-item>
     </q-list>
     <div class="col-md-10">
-        name
+      <router-view :header-height="headerHeight" style="min-height: unset" />
     </div>
     <!-- <q-splitter v-model="splitterModel">
       <template v-slot:before>
@@ -108,13 +108,13 @@ export default {
           icon: "dashboard",
           label: "Personal details",
           separator: false,
-          link: "profile/personalDetails",
+          link: "personalDetails",
         },
         {
           icon: "supervisor_account",
           label: "About",
           separator: false,
-          link: "profile/about",
+          link: "about",
         },
       ],
     };
@@ -122,5 +122,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
