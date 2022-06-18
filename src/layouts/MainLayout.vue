@@ -1,28 +1,26 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <!-- <q-header elevated>
+    <q-header reveal class="bg-primary">
+      <div>
+        <q-img
+          src="https://cdn.quasar.dev/img/material.png"
+          id="target-img-1"
+          style="height: 100px"
+        />
+      </div>
       <q-toolbar>
         <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
+          v-if="!isLoggedIn"
+          label="Sign in"
+          color="primary"
+          @click="signIn = true"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header> -->
-
-    <q-header reveal class="bg-primary">
-      <q-toolbar>
-        <q-btn  v-if="!isLoggedIn" label="Sign in" color="primary" @click="signIn = true" />
-        <q-btn  v-if="!isLoggedIn" label="Register" color="primary" @click="register = true" />
+        <q-btn
+          v-if="!isLoggedIn"
+          label="Register"
+          color="primary"
+          @click="register = true"
+        />
       </q-toolbar>
     </q-header>
     <!-- <q-drawer
@@ -60,7 +58,7 @@
 
 <script>
 import Login from "../pages/auth/Login.vue";
-import Register from '../pages/auth/Register.vue';
+import Register from "../pages/auth/Register.vue";
 
 const linksData = [
   {

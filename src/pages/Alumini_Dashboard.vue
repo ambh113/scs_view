@@ -108,13 +108,13 @@ export default {
           icon: "dashboard",
           label: "Personal details",
           separator: false,
-          link: "personalDetails",
+          link: "/profile/personalDetails",
         },
         {
           icon: "supervisor_account",
           label: "About",
           separator: false,
-          link: "about",
+          link: "/profile/about",
         },
       ],
     };
