@@ -1,14 +1,21 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header reveal class="bg-primary">
-      <div>
-        <q-img
-          src="https://cdn.quasar.dev/img/material.png"
+      <div class="row">
+        <img
+          src="~assets/img/logo.png"
           id="target-img-1"
-          style="height: 100px"
+          style="height: 100px;"
         />
-      </div>
-      <q-toolbar>
+      
+      <div class="banner">
+                <line1 id="line1">Central University of Karnataka | कर्नाटक केंद्रीय विश्‍वविद्यालय | ಕರ್ನಾಟಕ ಕೇಂದ್ರೀಯ ವಿಶ್ವವಿದ್ಯಾಲಯ</line1><br>
+                <line2 id="line2"><i>(Eshtablished by an Act of Parliament in 2009)</i></line2><br>
+                <line3 id="line3">School of Computer Science</line3>
+
+            </div>
+        </div>
+      <q-toolbar class="justify-end">
         <q-btn
           v-if="!isLoggedIn"
           label="Sign in"
@@ -23,26 +30,6 @@
         />
       </q-toolbar>
     </q-header>
-    <!-- <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer> -->
 
     <q-page-container>
       <router-view />
@@ -125,5 +112,10 @@ export default {
 <style scoped>
 .bg-white {
   background: #141416;
+}
+.banner {
+  align-self: center;
+  font-size: 16px;
+  padding-left: 20px;
 }
 </style>

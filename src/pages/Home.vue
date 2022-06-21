@@ -1,71 +1,28 @@
 <template>
   <div>
-    <!-- <q-dialog v-model="signIn"> -->
-    <q-card class="my-card" rounded>
-      <q-card-section>
-        <q-img
-          src="https://cuk.ac.in/assets/cukimg/cuk-full-logo.png"
-          :ratio="45 / 9"
-        />
+    <carousel/>
+    <div class="row" style="height:350px; padding-left: 18px;">
+<q-card class="col-6">
+  <q-card-section>
+        <div class="text-h6 text-center">Flash News</div>
       </q-card-section>
-      <q-card-section>
-        <q-input filled v-model="email" type="email" label="Email" />
-      </q-card-section>
-      <q-card-section>
-        <q-input
-          v-model="password"
-          label="Password"
-          filled
-          :type="isPwd ? 'password' : 'text'"
-          hint="Password with toggle"
-        >
-          <template v-slot:append>
-            <q-icon
-              :name="isPwd ? 'visibility_off' : 'visibility'"
-              class="cursor-pointer"
-              @click="isPwd = !isPwd"
-            />
-          </template>
-        </q-input>
-      </q-card-section>
-      <q-card-section class="row">
-        <div class="col">
-          <q-checkbox v-model="remember" label="Remember Me" />
-        </div>
-        <div class="col self-center text-primary cursor-pointer" @click="forp">
-          forget password ?
-        </div>
-      </q-card-section>
-
-      <q-card-actions>
-        <q-btn
-          class="full-width bg-primary text-white"
-          flat
-          rounded
-          @click="login"
-        >
-          Login
-        </q-btn>
-      </q-card-actions>
+      <marquee width="100%" direction="up" height="80%">
+      This is a sample scrolling text that has scrolls in the upper direction.
+      </marquee>
     </q-card>
-    <!-- </q-dialog> -->
+    </div>
+    
   </div>
 </template>
 
 <script>
+import Carousel from "src/components/main/Carousel.vue"
 export default {
-  data() {
-    return {
-      //   signIn: true,
-    };
+  components: {
+    Carousel
   },
-  methods: {
-    calling() {
-      
-    }
-  }
-};
+}
 </script>
-
 <style>
+
 </style>

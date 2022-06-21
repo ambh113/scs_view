@@ -8,6 +8,11 @@ const routes = [{
                     import ('pages/Index.vue')
             },
             {
+                path: '/home',
+                component: () =>
+                    import ('pages/Home'),
+            },
+            {
                 path: '/profile',
                 component: () =>
                     import ('pages/Alumini_dashboard'),
