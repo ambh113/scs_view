@@ -28,6 +28,10 @@ const routes = [{
                             import ('pages/About')
                     }
                 ]
+            },
+            {
+                path: '/alumini',
+                component: () => import('pages/alumini_public/ShowAlumini')
             }
         ]
     },
