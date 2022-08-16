@@ -8,13 +8,12 @@
           style="height: 100px;"
         />
       
-      <div class="banner">
-                <line1 id="line1">Central University of Karnataka | कर्नाटक केंद्रीय विश्‍वविद्यालय | ಕರ್ನಾಟಕ ಕೇಂದ್ರೀಯ ವಿಶ್ವವಿದ್ಯಾಲಯ</line1><br>
-                <line2 id="line2"><i>(Eshtablished by an Act of Parliament in 2009)</i></line2><br>
-                <line3 id="line3">School of Computer Science</line3>
-
-            </div>
+        <div class="banner">
+          <span id="line1">Central University of Karnataka | कर्नाटक केंद्रीय विश्‍वविद्यालय | ಕರ್ನಾಟಕ ಕೇಂದ್ರೀಯ ವಿಶ್ವವಿದ್ಯಾಲಯ</span><br>
+          <span id="line2"><i>(Eshtablished by an Act of Parliament in 2009)</i></span><br>
+          <span id="line3">School of Computer Science</span>
         </div>
+      </div>
       <q-toolbar class="justify-end">
         <q-btn
           v-if="!isLoggedIn"
@@ -44,56 +43,10 @@
 </template>
 
 <script>
-import Login from "../pages/auth/Login.vue";
-import Register from "../pages/auth/Register.vue";
-
-const linksData = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
-];
+import Login from "src/pages/auth/Login.vue";
+import Register from "src/pages/auth/Register.vue";
 
 export default {
-  name: "MainLayout",
   components: {
     Login,
     Register,
@@ -104,7 +57,6 @@ export default {
       register: false,
       signIn: false,
       leftDrawerOpen: false,
-      essentialLinks: linksData,
     };
   },
 };

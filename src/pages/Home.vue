@@ -11,15 +11,16 @@
       </marquee>
     </q-card>
     </div>
-    
+    <faculty/>
   </div>
 </template>
 
 <script>
 import Carousel from "src/components/main/Carousel.vue"
+import Faculty from "src/components/main/Faculty.vue"
 export default {
   components: {
-    Carousel
+    Carousel,Faculty
   },
 }
 </script>
