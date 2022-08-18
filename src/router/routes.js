@@ -4,16 +4,20 @@ const routes = [{
             import ('layouts/MainLayout.vue'),
         children: [{
                 path: '',
+                meta: { requiresAuth: false },
                 component: () =>
                     import ('pages/Index.vue')
             },
             {
                 path: '/home',
+                name: 'home',
+                meta: { requiresAuth: false },
                 component: () =>
                     import ('pages/Home'),
             },
             {
                 path: '/profile',
+                meta: { requiresAuth: true },
                 component: () =>
                     import ('pages/Alumini_dashboard'),
                 children: [{

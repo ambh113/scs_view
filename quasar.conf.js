@@ -23,7 +23,9 @@ module.exports = function( /* ctx */ ) {
         // https://v1.quasar.dev/quasar-cli/boot-files
         boot: [
             'axios',
-            'notify-default'
+            'notify-default',
+            'router',
+            'vue-cookies'
         ],
 
         // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -99,7 +101,7 @@ module.exports = function( /* ctx */ ) {
             // directives: [],
 
             // Quasar plugins
-            plugins: ['Notify']
+            plugins: ['Notify', 'Cookies']
         },
 
         // animations: 'all', // --- includes all animations

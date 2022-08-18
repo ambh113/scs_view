@@ -61,8 +61,24 @@ export default {
     };
   },
   methods: {
-    login() {
-      console.log(this.email + this.password);
+    async login() {
+      const payload = {
+        email: this.email,
+        password: this.password,
+      };
+      try {
+        const resp = await this.$axios.post("/auth/login", payload);
+        this.$cookies.set('isLoggedIn', true);
+        this.$cookies.set('alumini_id', resp.data.id);
+        this.$router.push({
+          name: "personal-details",
+        });
+      } catch (ex) {
+        this.$q.notify({
+          message: ex.response.data,
+          type: "negative",
+        });
+      }
     },
     forp() {},
   },
